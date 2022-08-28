@@ -32,7 +32,6 @@ const index = () => {
         if (countDown === 1) {
           setStart(false);
           setCountDown(null);
-          alert("Waktu habis!");
         }
       }, 1000);
     }
@@ -44,7 +43,7 @@ const index = () => {
   return (
     <div className="flex flex-col w-full h-screen items-center justify-start bg-slate-900 p-5 space-y-5">
       <div className="flex flex-col justify-center items-center space-y-5 w-3/4 h-auto px-4 py-5 bg-slate-200 text-gray-500 bg-opacity-10 rounded">
-        <h1 className="text-4xl">Jumlah : {count}</h1>
+        <h1 className="text-lg lg:text-4xl">Jumlah : {count}</h1>
         <div className="flex space-x-4">
           <Button onClick={Increment}>Tambah Nilai</Button>
           <Button onClick={Decrement}>Kurangi Nilai</Button>
@@ -52,7 +51,9 @@ const index = () => {
       </div>
       <div className="flex flex-col justify-center items-center w-3/4 h-auto px-4 py-5 bg-slate-200 text-gray-500 bg-opacity-10 rounded">
         <form className="text-center space-y-5" onSubmit={startCountDown}>
-          <h1 className="text-4xl">Masukan waktu countdown dalam detik</h1>
+          <h1 className="text-lg lg:text-4xl">
+            Masukan waktu countdown dalam detik
+          </h1>
           <input
             type="number"
             className="content-center focus:outline focus:outline-slate-300 rounded py-1 text-center mx-3"
@@ -63,11 +64,11 @@ const index = () => {
           <Button type="submit">Mulai</Button>
         </form>
         {countDown === null ? (
-          <p className="text-gray-500 text-2xl py-3">
+          <p className="text-gray-500 text-md text-center lg:text-2xl py-3">
             Waktu anda telah habis! Silahkan isi kembali .
           </p>
         ) : (
-          <p className="text-gray-500 text-2xl py-3">
+          <p className="text-gray-500 text-md text-center lg:text-2xl py-3">
             Waktu anda tersisa {countDown} detik.
           </p>
         )}
@@ -76,4 +77,4 @@ const index = () => {
   );
 };
 
-export default React.memo(index);
+export default index;
